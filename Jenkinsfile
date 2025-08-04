@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Cloning repo...'
-                git url: 'https://github.com/insiyaya/jenkins-test-pipeline.git', branch: 'master'
+                checkout scm
             }
         }
 
@@ -15,7 +15,7 @@ pipeline {
                 echo 'Running build...'
             }
         }
-        
+
         stage('Test') {
             steps {
                 sh 'python3 app.py'
