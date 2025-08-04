@@ -1,7 +1,9 @@
 // Jenkinsfile
 pipeline {
     agent any
-
+    Triggers {
+        githubPush()
+    }
     stages {
         stage('Checkout') {
             steps {
